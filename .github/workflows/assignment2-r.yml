@@ -1,0 +1,38 @@
+name: Assignment 2 actual R execution
+on:
+  push:
+    paths:
+      - '.github/workflows/assignment2-r.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install R and technical analysis packages on Linux runner
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends r-base-core r-cran-quantmod r-cran-ttr
+          Rscript -e 'print(R.version.string); print(packageVersion("quantmod")); print(packageVersion("TTR")); sessionInfo()'
+      - name: Run independent deterministic checks
+        working-directory: Assignment2
+        run: |
+          mkdir -p outputs
+          set -o pipefail
+          Rscript Oluwabunmi_BDA400_A02_Checks.R 2>&1 | tee outputs/check_log.txt
+      - name: Download portfolio data and calculate actual R results
+        working-directory: Assignment2
+        run: |
+          set -o pipefail
+          Rscript Oluwabunmi_BDA400_A02_Run.R 2>&1 | tee outputs/run_log.txt
+      - name: Retain actual outputs and execution logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Assignment2-actual-R-outputs
+          path: Assignment2/outputs/
+          retention-days: 14
+          if-no-files-found: warn
