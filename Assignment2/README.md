@@ -15,9 +15,3 @@ Each `stocks[[symbol]]` element is a separate ordinary data frame with Date, Ope
 
 Execution evidence: https://github.com/asaoluoluwabunmi-cloud/TechnicalAnalysis/actions/runs/45535244196
 Tested commit: f31adbee46206f005c3e7b9feaccbb18cd4fecc7. Subsequent source edits remove comments only.
-
-Execution evidence: https://github.com/asaoluoluwabunmi-cloud/TechnicalAnalysis/actions/runs/45535244196
-Tested commit: f31adbee46206f005c3e7b9feaccbb18cd4fecc7. Subsequent source edits remove comments only.
-
-Execution evidence: https://github.com/asaoluoluwabunmi-cloud/TechnicalAnalysis/actions/runs/45535244196
-Tested commit: f31adbee46206f005c3e7b9feaccbb18cd4fecc7. Subsequent source edits remove comments only.
