@@ -1,6 +1,3 @@
-# AI-assisted code drafted with ChatGPT on 25 November 2026.
-# R execution and live Yahoo downloads have not been verified here.
-
 load_stock_data <- function(portfolio_file = "portfolio.txt",
                             from = as.Date("2026-09-01"),
                             to = as.Date("2026-11-01")) {

@@ -1,4 +1,3 @@
-# AI-assisted deterministic checks. Run after installing TTR.
 source("Oluwabunmi_BDA400_A02_Functions.R")
 example <- data.frame(Date = as.Date("2026-01-01") + 0:4, Adjusted = c(1, 2, 2, 3, 7))
 a <- calculate_statistics(example, window = 3L)

@@ -1,4 +1,3 @@
-# AI-assisted display utilities. Run from the Assignment2 directory.
 display_stock_data <- function(stocks, rows = 6L) {
   if (length(rows) != 1L || !is.finite(rows) || rows < 1 || rows != floor(rows))
     stop("rows must be a positive integer.")

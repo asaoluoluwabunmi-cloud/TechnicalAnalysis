@@ -1,4 +1,3 @@
-# AI-assisted runner; execute from the Assignment2 directory.
 # First run once in the R console:
 # install.packages(c("quantmod", "TTR"))
 needed <- c("quantmod", "TTR", "zoo")
